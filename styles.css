@@ -1,0 +1,57 @@
+
+body{
+    text-align: center;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    font-size: 1.3em;
+}
+.resultPara{
+    padding: 50px;
+    text-align: center;
+}
+.selected{
+    background: darkgrey;
+}
+.playArea{
+    display:flex;
+    margin-top: 5%;
+    justify-content: space-around;
+}
+.playerArea, .computerArea{
+    padding: 40px;
+    padding-top:20px;
+    height: 7em;
+    background: rgba(184, 184, 184, 0.7);
+    border-radius: 10px;
+    box-shadow: 7px 7px 18px 5px rgba(0,0,0,0.75);
+}
+.btn-area{
+    width: 15em;
+    display:flex;
+    justify-content: space-between;
+}
+h1{
+    width: 50%;
+    margin:auto;
+    background: rgba(184, 184, 184, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 7px 7px 18px 5px rgba(0,0,0,0.75);
+}
+h1, h2{
+    color: black;
+    text-align: center;
+    margin-top:20px;
+}
+
+button{
+    border: none;
+    width:100%;
+    margin: 2px;
+    padding: 10px;
+    border-radius: 3px;;
+}
+button:focus{
+    outline:none;
+    border: none;
+}

@@ -3,69 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
-        let playerScore = 0;
-        let computerScore = 0;
-        function computerPlay() {
-            let plays = ["rock" , "paper" , "scissors"];
-            return plays[Math.floor(Math.random()*3)];
-        }
-        function playRound(playerSelection, computerSelection){
-            //turn playerSelection to lowerCase
-            playerSelection= playerSelection.toLowerCase();
-            //IF playerSelection equals computerSelection
-            if(playerSelection===computerSelection){
-                // return "Nobody won! computerSelection equals playerSelection"
-                return "Nobody won! " + computerSelection + " equals " + playerSelection;  
-            }
-            //IF playerSelection is scissors and computerSelection is rock
-                //OR IF playerSelection is rock and compuerSelection is paper
-                //OR IF playerSelection is paper and compuerSelection is scissors
-            if(playerSelection == "scissors" && computerSelection == "rock" 
-            || playerSelection == "rock" && computerSelection == "paper"
-            || playerSelection == "paper" && computerSelection == "scissors"){
-            //return "You lose! computerSelection beats playerSelection"
-                computerScore++;
-                return "You lose! " + computerSelection + " beats " + playerSelection;
-            }
-            //return "You won! computerSelection beats playerSelection"
-            playerScore++;
-            return "You won! " + playerSelection + " beats " + computerSelection;
-        }
-        
-        function game(){
-            // create variable playerSelection
-            let playerSelection
-            //while rounds < 5 
-            for(i = 0; i<5; i++){
-                //prompt user for input and store in playerSelection
-                playerSelection = prompt("Enter Rock, Paper or Scissors","");
-                //call playRound(playerSelection, computerPlay()) and log it on Console
-                console.log(playRound(playerSelection, computerPlay()));
-            }
-            determineOverallWinner();
-        }
-
-        function determineOverallWinner(){
-            // IF playerScore == computerScore
-            if(playerScore==computerScore){
-                // Output  "Nobody Wins"
-                console.log("Nobody wins! Your Score: " + playerScore + " Computer Score: " + computerScore);
-            // ELSE IF playerScore > computerScore
-            }else if(playerScore>computerScore){
-                // Output "Player wins"
-                console.log("You win! Your Score: " + playerScore + " Computer Score: " + computerScore);
-            // ELSE 
-            }else{
-                // Output Computer wins
-                console.log("Computer wins! Your Score: " + playerScore + " Computer Score: " + computerScore);
-            }  
-        }
-
-        game();
-    </script>
+    <h1>Rock Paper Scissors</h1>
+    <p class="resultPara"></p>
+    <div class="playArea">
+        <div class="playerArea">
+            <h2>You</h2>
+            <div class="btn-area">
+            <button id="rock-btn" value="rock">Rock</button>
+            <button id="paper-btn" value="paper">Paper</button>
+            <button id="scissors-btn" value="scissors">Scissors</button>
+            </div>
+            <p class="scoreBoard">Score: 0</p>
+        </div>
+        <div class="computerArea">
+            <h2>Computer</h2>
+            <div class="btn-area">
+            <button id="rock-btn" value="rock">Rock</button>
+            <button id="paper-btn" value="paper">Paper</button>
+            <button id="scissors-btn" value="scissors">Scissors</button>
+            </div>
+            <p class="scoreBoard">Score: 0</p>
+        </div>
+    </div>
+    
+    <script src="scripts.js"></script>
 </body>
 </html>
